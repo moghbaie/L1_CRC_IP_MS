@@ -21,5 +21,4 @@ https://docs.google.com/document/d/1Rdn2QTG43JNEqdcNk980U1I6ZvwONEP2scBosMZBJk0/
   *	Txt_B included all
 
 ## Project Pipeline:
-![alt text](https://github.com/moghbaie/L1_CRC_v2/blob/master/NCBP_pipeline_details.png)
-<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/NCBP_pipeline_details.png" alt="Vega Examples" width="900"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/NCBP_pipeline_details.png" alt="Vega Examples" width="600"></img>
