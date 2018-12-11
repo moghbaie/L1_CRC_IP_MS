@@ -8,10 +8,10 @@ https://docs.google.com/document/d/1Rdn2QTG43JNEqdcNk980U1I6ZvwONEP2scBosMZBJk0/
 
 Project code and data is organized in following order:
 
-[Code](https://github.com/moghbaie/L1_CRC_v2/tree/master/Code/ReadMe_Code.md)
-[Input_data](https://github.com/moghbaie/L1_CRC_v2/tree/master/Input_data/ReadMe_Input.md)
-[Result](https://github.com/moghbaie/L1_CRC_v2/tree/master/Result)
-[Image](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image)
+* [Code](https://github.com/moghbaie/L1_CRC_v2/tree/master/Code/ReadMe_Code.md)
+* [Input_data](https://github.com/moghbaie/L1_CRC_v2/tree/master/Input_data/ReadMe_Input.md)
+* [Result](https://github.com/moghbaie/L1_CRC_v2/tree/master/Result)
+* [Image](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image)
 
 
 ## Project Pipeline:
