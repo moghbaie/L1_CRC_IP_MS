@@ -19,11 +19,18 @@ install.packages.if.necessary(CRAN.packages,bioconductor.packages)
 ##  2. Perform t-test between cases and controls
 ##  3. Adjust pvalueswith Benjamin Hochberg correction test
 ##  4. Select significant proteins with (p.adj < 0.05 & log2fold > 1)
+##  5. Draw Volcano plot
+
+
+
+####################################################################################################################
+## 5. Volcano plot "../Image/Volcano_plot/"
+####################################################################################################################
+
 
 
 ####################################################################################################################
 ## Save the output in "../Result/4. ANOVA_result/"
 ####################################################################################################################
 
-df <- data.frame(matrix(NA, ncol=3))
-write.csv(df,file="../Result/4. ANOVA_result/test.csv")
+write.csv(df,file="../Result/4. ANOVA_result/Significant_table.RData")

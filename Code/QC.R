@@ -9,7 +9,7 @@ setwd(
 )
 
 ## install the required packages.
-CRAN.packages <- c("readr","data.table","reshape2","dplyr","magrittr","igraph","sqldf","stringr","corrplot","ggplot2")
+CRAN.packages <- c("readr","data.table","reshape2","dplyr","magrittr","sqldf","PTXQC","corrplot","ggplot2")
 bioconductor.packages <- c("biomaRt")
 source("All_Functions.R")
 install.packages.if.necessary(CRAN.packages,bioconductor.packages)
@@ -17,9 +17,15 @@ install.packages.if.necessary(CRAN.packages,bioconductor.packages)
 ## QC steps
 
 
+
+####################################################################################################################
+## QC plot "../Image/QC_plot/"
+####################################################################################################################
+
+
+
 ####################################################################################################################
 ## Save the output in "../Result/1. QC/"
 ####################################################################################################################
 
-df <- data.frame(matrix(NA, ncol=3))
-write.csv(df,file="../Result/1. QC/test.csv")
+
