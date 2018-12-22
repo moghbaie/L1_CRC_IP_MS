@@ -11,7 +11,7 @@ setwd(
 ## install the required packages.
 CRAN.packages <- c("readr","readxl","data.table","reshape2","dplyr","magrittr","igraph","sqldf","stringr","corrplot","ggplot2")
 bioconductor.packages <- c("biomaRt")
-source("Function/All_Functions.R")
+source("Functions/All_Functions.R")
 install.packages.if.necessary(CRAN.packages,bioconductor.packages)
 
 ## Data preparation consists of four stages:
@@ -67,5 +67,5 @@ colnames(list_experiment[["Colon"]]) <- paste0(colnames(list_experiment[["Colon"
 ## Save the output in "../Result/2. After_preparation/"
 ####################################################################################################################
 
-save(list_experiment,file="../Result/2. After_preparation/log_transformed.RData")
+save(KM050217_merged,list_experiment,file="../Result/2. After_preparation/log_transformed.RData")
 

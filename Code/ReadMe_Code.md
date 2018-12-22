@@ -36,4 +36,4 @@
 * Adjust p-values with Benjamin-Hochberg correction test
 * Calculate log2fold change
 * Select significant proteins with p.adj <0.05 & logfol d> 1
-###	5. Normalize and integrate data
+###	5. Normalize BY LORF1 and integrate data
