@@ -32,18 +32,18 @@ Project code and data is organized in following order:
 
 
 ## Project Pipeline:
-<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/CRC_pipeline.png" alt="Vega Examples" width="1000"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/CRC_pipeline.png" alt="Pipeline" width="1000"></img>
 
 
 ## QC
 
 ## Imputation
 ![Colon tissue - before and after imputation with method 7_1](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_before_imputation.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_after_imputation.png" alt="Vega Examples" width="800"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="" width="800"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Liver tissue - before and after imputation with method 7_1" width="800"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Ovary tissue - before and after imputation with method 7_1" width="800"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_before_imputation.png" alt="Average intensities before imputation" width="800"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_after_imputation.png" alt="Average intensities after imputation" width="800"></img>
 
 ## Anova 
 ### Venndiagram
