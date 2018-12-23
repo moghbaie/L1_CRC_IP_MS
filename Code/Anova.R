@@ -14,19 +14,10 @@ bioconductor.packages <- c("biomaRt")
 source("Functions/All_Functions.R")
 install.packages.if.necessary(CRAN.packages,bioconductor.packages)
 
-## Variance analysis consists of four stages:
-##  1. Filter proteins with less than two peptides
-##  2. Perform t-test between cases and controls
-##  3. Adjust pvalueswith Benjamin Hochberg correction test
-##  4. Select significant proteins with (p.adj < 0.05 & log2fold > 1)
-##  5. Draw Volcano plot
 
 load(file="../Result/3. After_imputation/after_imputation.RData")
 
-##  1. Filter proteins with less than two peptides
-# I'll skip this one for now
-
-
+##  1. Filter proteins with less than two peptides (I'll skip this one for now)
 ##  2. Perform t-test between cases and controls
 ##  3. Adjust pvalueswith Benjamin Hochberg correction test
 ##  4. Select significant proteins with (p.adj < 0.05 & log2fold > 1)
@@ -82,23 +73,6 @@ Significant_list <- Significant_proteins%>%
 ####################################################################################################################
 ## 5. Volcano plot "../Image/Volcano_plot/"
 ####################################################################################################################
-
-
-draw_volcanoplot <- function(data=list_experiment, condition="Liver_Tumor_Igg"){
-  ds <- data[[condition]]
-  fold_cutoff = 1
-  pvalue_cutoff = 0.05
-  png(paste0("../Image/Volcano_plot/Volcano_plot_",condition,".png"),width = 800, height = 600)
-  p <- ggplot(ds, aes(logfold, -log10(p.adj), label = ifelse(Significant=="Yes"|ID=="LORF1",ID,""))) +
-    geom_point(color = ifelse(ds$Significant == "Yes"|ds$ID=="LORF1", "red", "grey50")) +
-    geom_text_repel()+
-    geom_vline(xintercept = fold_cutoff, col = "blue")+
-    geom_hline(yintercept = -log10(pvalue_cutoff), col = "green")+
-    ggtitle(condition)
-  print(p)
-  dev.off()
-}
-
 
 names(list_experiment)[grep("_",names(list_experiment))]
 draw_volcanoplot(condition="Ovary_Tumor_Igg")

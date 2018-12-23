@@ -15,6 +15,17 @@ Project code and data is organized in following order:
 
 
 ## Project Pipeline:
-<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/NCBP_pipeline_details.png" alt="Vega Examples" width="680"></img>
+<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/CRC_pipeline.png" alt="Vega Examples" width="800"></img>
 
+
+|	Tissue	|	Condition	|
+| ------------- | ------------- |
+| Ovary  | Igg  |
+| Ovary  | Normal  |
+|	Liver	|	Igg	|
+|	Liver	|	Normal	|
+|	Liver	|	Tumor	|
+|	Colon	|	Igg	|
+|	Colon	|	Normal	|
+|	Colon	|	Tumor	|
 
