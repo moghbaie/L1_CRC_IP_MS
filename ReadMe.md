@@ -17,6 +17,8 @@ We had 8 groups as follow:
 |	Colon	|	Tumor	|	163	|	75	|	F 	|	Adenocarcinoma	|	2/3 expression	|
 
 
+
+
 This project is done following previous project(Line1 CRC V1)
 Detail report exists in following link:
 https://docs.google.com/document/d/1Rdn2QTG43JNEqdcNk980U1I6ZvwONEP2scBosMZBJk0/edit
@@ -36,6 +38,7 @@ Project code and data is organized in following order:
 ## QC
 
 ## Imputation
+![Colon tissue - before and after imputation with method 7_1](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Vega Examples" width="800"></img>
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Vega Examples" width="800"></img>
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Vega Examples" width="800"></img>
