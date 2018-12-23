@@ -39,32 +39,31 @@ Project code and data is organized in following order:
 
 ## Imputation
 ![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Liver tissue - before and after imputation with method 7_1" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Ovary tissue - before and after imputation with method 7_1" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_before_imputation.png" alt="Average intensities before imputation" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/average_intensities_after_imputation.png" alt="Average intensities after imputation" width="800"></img>
+![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png)
+![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png)
+![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
+![Average intensities after imputation](Image/Imputation/average_intensities_after_imputation.png)
 
 ## Anova 
 ### Venndiagram
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Significant_VennDiagram.png" alt="Vega Examples" width="1000"></img>
+![VennDiagram of significant proteins ](Image/Volcano_plot/Significant_VennDiagram.png)
 
 ### Volcano plots
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Volcano_plot_Colon_Tumor_Igg.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Volcano_plot_Colon_Tumor_Normal.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Volcano_plot_Liver_Tumor_Igg.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Volcano_plot_Liver_Tumor_Normal.png" alt="Vega Examples" width="800"></img>
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Volcano_plot/Volcano_plot_Ovary_Tumor_Igg.png" alt="Vega Examples" width="800"></img>
+![Volcano plot compare Colon Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Igg.png)
+![Volcano plot compare Colon Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Normal.png)
+![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Igg.png)
+![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Normal.png)
+![Volcano plot compare Ovary Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_Igg.png)
 
 ## Integrated plot
 ### Venndiagram
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Integrated_plot/VennDiagram.png" alt="Vega Examples" width="1000"></img>
+![VenDiagram of expressed proteins ](Image/Integrated_plot/VennDiagram.png)
 
 ### MDS plot
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Integrated_plot/movie.gif" alt="Vega Examples" width="1000"></img>
+![MDS plot ](Image/Integrated_plot/movie.gif)
 
 ### Polar map of significant proteins in Colon cancer in different tissue
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Integrated_plot/heatmap_colon_significant.png" alt="Vega Examples" width="1000"></img>
+![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)
 
 ### Heat map of all significant proteins across different tissues
-<img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Integrated_plot/heatmap_all significant.png" alt="Vega Examples" width="400"></img>
+![Heatmap - all signi9ficant proteins](Image/Integrated_plot/heatmap_all significant.png)
