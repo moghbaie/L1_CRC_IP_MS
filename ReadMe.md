@@ -65,9 +65,10 @@ _
 
 ### MDS plot:
 ![MDS plot ](Image/Integrated_plot/movie.gif)
-
+<br>
+<br>
 ### Polar map of significant proteins in Colon cancer in different tissue:
 ![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)
 
 ### Heat map of all significant proteins across different tissues:
-![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all significant.png)
+![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all_significant.png)
