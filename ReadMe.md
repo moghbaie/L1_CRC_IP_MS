@@ -39,35 +39,35 @@ Project code and data is organized in following order:
 _
 ## Imputation:
 ### Comparison before - after imputation:
-![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)_
-![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png)_
-![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png)_
+![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
+![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png)
+![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png)
 
 ### Average intensities before - after imputation:
-![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)_
-![Average intensities after imputation](Image/Imputation/average_intensities_after_imputation.png)_
+![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
+![Average intensities after imputation](Image/Imputation/average_intensities_after_imputation.png)
 
 ## ANOVA result: 
 
 ### Venndiagram
-![VennDiagram of significant proteins ](Image/Volcano_plot/Significant_VennDiagram.png)_
+![VennDiagram of significant proteins ](Image/Volcano_plot/Significant_VennDiagram.png)
 
 ### Volcano plots
-![Volcano plot compare Colon Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Igg.png)_
-![Volcano plot compare Colon Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Normal.png)_
-![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Igg.png)_
-![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Normal.png)_
-![Volcano plot compare Ovary Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_Igg.png)_
+![Volcano plot compare Colon Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Igg.png)
+![Volcano plot compare Colon Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_Normal.png)
+![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Igg.png)
+![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_Normal.png)
+![Volcano plot compare Ovary Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_Igg.png)
 
 ## Integrated plot:
 ### Venndiagram:
-![VenDiagram of expressed proteins ](Image/Integrated_plot/VennDiagram.png)_
+![VenDiagram of expressed proteins ](Image/Integrated_plot/VennDiagram.png)
 
 ### MDS plot:
-![MDS plot ](Image/Integrated_plot/movie.gif)_
+![MDS plot ](Image/Integrated_plot/movie.gif)
 
 ### Polar map of significant proteins in Colon cancer in different tissue:
-![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)_
+![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)
 
 ### Heat map of all significant proteins across different tissues:
-![Heatmap - all signi9ficant proteins](Image/Integrated_plot/heatmap_all significant.png)_
+![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all significant.png)
