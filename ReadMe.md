@@ -38,7 +38,7 @@ Project code and data is organized in following order:
 ## QC
 
 ## Imputation
-![Colon tissue - before and after imputation with method 7_1](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
+![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="" width="800"></img>
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Liver tissue - before and after imputation with method 7_1" width="800"></img>
 <img src="https://github.com/moghbaie/L1_CRC_v2/tree/master/Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Ovary tissue - before and after imputation with method 7_1" width="800"></img>
