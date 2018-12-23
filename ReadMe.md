@@ -39,9 +39,9 @@ Project code and data is organized in following order:
 
 ## Imputation:
 ### Comparison before - after imputation:
-![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png|width=600)
-![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png|width=600)
-![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png|width=400)
+<img src="Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Pipeline" width="600"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Pipeline" width="600"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Pipeline" width="400"></img>
 
 ### Average intensities before - after imputation:
 ![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
