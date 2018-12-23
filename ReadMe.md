@@ -36,12 +36,12 @@ Project code and data is organized in following order:
 
 
 ## QC:
-_
+
 ## Imputation:
 ### Comparison before - after imputation:
-![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png)
-![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png)
-![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png)
+![Colon tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Colon_7_1.png|width=600)
+![Liver tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Liver_7_1.png|width=600)
+![Ovary tissue - before and after imputation with method 7_1](Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png|width=400)
 
 ### Average intensities before - after imputation:
 ![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
