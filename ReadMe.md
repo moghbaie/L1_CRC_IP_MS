@@ -39,9 +39,11 @@ Project code and data is organized in following order:
 
 ## Imputation:
 ### Comparison before - after imputation:
-<img src="Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Pipeline" width="750"></img>
-<img src="Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Pipeline" width="750"></img>
-<img src="Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Pipeline" width="500"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Pipeline" width="900"></img>
+<br>
+<img src="Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Pipeline" width="900"></img>
+<br>
+<img src="Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Pipeline" width="600"></img>
 
 ### Average intensities before - after imputation:
 ![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
