@@ -1,0 +1,3 @@
+MaxQuant_Output	"Data_from_Kelly/KM050217_merged.xlsx"
+Contaminants	"Data_from_Kelly/contaminants.fasta"
+data_type	"iBAQ"

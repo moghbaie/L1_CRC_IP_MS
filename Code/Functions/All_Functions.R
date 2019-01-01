@@ -8,20 +8,23 @@
 #######################################################################################
 
 install.packages.if.necessary <- function(CRAN.packages=c(), bioconductor.packages=c()) {
-  if (length(bioconductor.packages) > 0) {
-    source("http://bioconductor.org/biocLite.R")
-  }
+  #if (length(bioconductor.packages) > 0) {
+  #  source("http://bioconductor.org/biocLite.R")
+  #}
+  
   for (p in bioconductor.packages) {
     if (!require(p, character.only=T)) {
-      biocLite(p) 
-      library(p, character.only=T)
+      BiocManager::install(p,version = "3.8") 
     }
+    library(p,lib.loc="~/R/win-library/3.5",character.only=T)
   }
+  
   for (p in CRAN.packages) {	
     if (!require(p, character.only=T)) { 	
       install.packages(p) 	
-      library(p, character.only=T)  	
     }	
+    #library(p, lib.loc="~/R/win-library/3.5",character.only=T) 
+    library(p, lib.loc="~/R/win-library/3.5",character.only=T)
   }
 }
 
@@ -43,26 +46,30 @@ na_zeros_mutate <- function(na_zeros , mu,sd){
   return(matrix(runif(sum(na_zeros), mu-3*sd, mu-2*sd),ncol=1))
 }
 
-### function: mutate all NA values for specific condition( control or case)
-### Method1
-mutate_all_zeros_1 <- function(data=list_experiment$Liver,condition="Normal"){
-  colnames <- colnames(data)[colnames]
-  na_zeros <- rowSums(data[,colnames],na.rm=T)==0
-  for(i in 1:length(colnames)){
-    sample <- data[,colnames[i]]
-    sample <- sample[complete.cases(sample),][[colnames[i]]]
-    mu <- mean(sample, na.rm=T)
-    sd <- sd(sample, na.rm=T)
-    data[na_zeros,colnames[i]] <- na_zeros_mutate(na_zeros , mu,sd)
-  }
+#####################################################################################################
+### Imputation method 6_2
 
-  return(data)
-}
+#Method_2:
+#  For each protein, which has zeros in each replica, replica with the least number of zeros is chosen.
+#  For it mean and standard deviation of non-zero proteins intensities are counted. 
+#  New intensity for this protein in this replica is sampled from uniform distribution with parameters: 
+#  start = mu - 3*sd, end = mu - 2*sd. Then other replicas for this protein are imputed as in 6th step
+#Intnew=Unif(mean(Intreplica)-3*sd(Intreplica),mean(Intreplica)-2*sd(Intreplica))
+
+#Method_6:
+# Impute values for proteins, which have zero intensities only in some replicates:
+#  Build distribution of deltas for all non zero proteins, where 
+# delta =(Intrep1-Intrep2) mean(Intrep1,Intrep2)
+# Calculate mudelta , sddelta
+# Calculate new delta and new Intensity:
+# deltanew=rnorm(mu=mudelta, sd=sddelta*sqrt(2)*mean(correlations))
+# Inew=mean(Intother)*abs(1+deltanew)
+
 
 
 ### Method2
 mutate_all_zeros_2 <- function(data=list_experiment$Liver,condition="Normal"){
-  colnames <- colnames(data)[colnames]
+  colnames <- colnames(data)[grepl(condition,colnames(data))]
   na_zeros <- rowSums(data[,colnames],na.rm=T)==0
   min_zero_col <- min_col(apply(data[,colnames],2,count_zeros))
   sample <- unname(unlist(data[,min_zero_col]))
@@ -99,7 +106,31 @@ imutate_partial_zero_6 <- function(data=list_experiment$Colon,condition="Tumor")
   return(data)
 } 
 
+#Method_1:
+# For each replica mean and standard deviation of non-zero proteins intensities are counted. 
+# New intensity for each missing value in each replica is sampled from uniform distribution with parameters:
+#  start = mu - 3*sd, end = mu - 2*sd
+# Intnew=Unif(mean(Intreplica)-3*sd(Intreplica),mean(Intreplica)-2*sd(Intreplica))
 
+#Method_7:
+# For outliers (proteins, which have zero values in all but one replica) this method implies one of the methods for imputation of all zero replicas.
+# For other proteins uses method6
+
+### function: mutate all NA values for specific condition( control or case)
+### Method1
+mutate_all_zeros_1 <- function(data,condition){
+  colnames <- colnames(data)[grepl(condition,colnames(data))]
+  na_zeros <- rowSums(data[,colnames],na.rm=T)==0
+  for(i in 1:length(colnames)){
+    sample <- data[,colnames[i]]
+    sample <- sample[complete.cases(sample),][[colnames[i]]]
+    mu <- mean(sample, na.rm=T)
+    sd <- sd(sample, na.rm=T)
+    data[na_zeros,colnames[i]] <- na_zeros_mutate(na_zeros , mu,sd)
+  }
+  
+  return(data)
+}
 
 ### Method7_1
 imutate_partial_zero_7_1 <- function(data=list_experiment$Colon,condition="Tumor"){
@@ -108,7 +139,6 @@ imutate_partial_zero_7_1 <- function(data=list_experiment$Colon,condition="Tumor
   OutVals = boxplot(data[[colnames[1]]])$out
   data[count_na_initial>1&(data[[colnames[1]]] %in% OutVals), colnames][!is.na(data[count_na_initial>1&(data[[colnames[1]]] %in% OutVals), colnames])] <- NA 
   data <- mutate_all_zeros_1(data,condition)
-  
   count_na <- apply(data[,colnames],1, count_zeros)
   y <- data[count_na>0,colnames]
   for(i in 1:dim(y)[1]){
@@ -135,17 +165,17 @@ imutate_partial_zero_7_1 <- function(data=list_experiment$Colon,condition="Tumor
 
 ### Function that plot intensity comparison before and after imputation
 
-plot_density<- function(data=list_experiment, tissue="Ovary"){
-  g<-dim(data[[tissue]][,-(1:2)])
+plot_density<- function(data , tissue="Ovary"){
+  g<-dim(data[["PreImputation"]][[tissue]][,-(1:2)])
   my.env <- new.env()
   for(i in 1:g[2]){
     df <- data.frame(rbind(
       cbind(unlist(unname(data[["PreImputation"]][[tissue]][,-(1:2)][,i])),rep("Before_imputation", g[1])),
-      cbind(unlist(unname(data[[tissue]][,-(1:2)][,i])),rep("After_imputation", g[1]))
+      cbind(unlist(unname(data[["experimentImputed"]][[tissue]][,-(1:2)][,i])),rep("After_imputation", g[1]))
     ))
     colnames(df) <- c("value","group")
     df$value<- as.numeric(as.character(df$value))
-    mu <- ddply(df, "group", summarise, grp.mean=mean(value,na.rm=TRUE))
+    mu <- plyr::ddply(df, "group", summarise, grp.mean=mean(value,na.rm=TRUE))
     assign(paste0("p",i),ggplot(df, aes(x=value, y=group, fill=factor(..quantile..))) +
              stat_density_ridges(geom = "density_ridges_gradient", calc_ecdf = TRUE, quantiles = c(0.25, 0.75)) +
              scale_fill_manual(
@@ -185,18 +215,29 @@ draw_mean_impute <- function(data, tissue="Colon"){
 ##################################################################################
 #### Volcano plot
 
-draw_volcanoplot <- function(data=list_experiment, condition="Liver_Tumor_Igg"){
+draw_volcanoplot <- function(data, condition="Liver_Tumor_Igg"){
   ds <- data[[condition]]
   fold_cutoff = 1
   pvalue_cutoff = 0.05
+  col <- ifelse(ds$Significant == "Yes"|ds$ID=="LORF1", "red", "grey50")
+  lab <- ifelse(ds$Significant=="Yes"|ds$ID=="LORF1",ds$ID,"")
   png(paste0("../Image/Volcano_plot/Volcano_plot_",condition,".png"),width = 800, height = 600)
-  p <- ggplot(ds, aes(logfold, -log10(p.adj), label = ifelse(Significant=="Yes"|ID=="LORF1",ID,""))) +
-    geom_point(color = ifelse(ds$Significant == "Yes"|ds$ID=="LORF1", "red", "grey50")) +
-    geom_text_repel()+
+  
+  p <- ggplot(ds) +
+    geom_point(aes(logfold, -log10(p.adj)),color = col) +
+    geom_text_repel(aes(logfold, -log10(p.adj),label = lab))+
     geom_vline(xintercept = fold_cutoff, col = "blue")+
     geom_hline(yintercept = -log10(pvalue_cutoff), col = "green")+
     ggtitle(condition)
+  
+  
   print(p)
   dev.off()
 }
 
+
+#######################################################################################
+#### Normalize functions
+######################################################################################
+
+numerize<- function(x) ifelse(x=="Yes",1,0)
