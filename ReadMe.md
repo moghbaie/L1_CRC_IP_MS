@@ -25,9 +25,8 @@ https://docs.google.com/document/d/1Rdn2QTG43JNEqdcNk980U1I6ZvwONEP2scBosMZBJk0/
 
 Project code and data is organized in following order:
 
-* [Code](https://github.com/moghbaie/L1_CRC_v2/tree/master/Code/ReadMe_Code.md)
+* [src](https://github.com/moghbaie/L1_CRC_v2/tree/master/src)
 * [Input_data](https://github.com/moghbaie/L1_CRC_v2/tree/master/Input_data/ReadMe_Input.md)
-* [Result](https://github.com/moghbaie/L1_CRC_v2/tree/master/Result)
 * [Image](https://github.com/moghbaie/L1_CRC_v2/tree/master/Image)
 
 
@@ -39,11 +38,11 @@ Project code and data is organized in following order:
 
 ## Imputation:
 ### Comparison before - after imputation:
-<img src="Image/Imputation/comparison_before_after_imputation_Colon_7_1.png" alt="Pipeline" width="900"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Colon_6_2.png" alt="Pipeline" width="900"></img>
 <br>
-<img src="Image/Imputation/comparison_before_after_imputation_Liver_7_1.png" alt="Pipeline" width="900"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Liver_6_2.png" alt="Pipeline" width="900"></img>
 <br>
-<img src="Image/Imputation/comparison_before_after_imputation_Ovary_7_1.png" alt="Pipeline" width="600"></img>
+<img src="Image/Imputation/comparison_before_after_imputation_Ovary_6_2.png" alt="Pipeline" width="600"></img>
 
 ### Average intensities before - after imputation:
 ![Average intensities before imputation](Image/Imputation/average_intensities_before_imputation.png)
