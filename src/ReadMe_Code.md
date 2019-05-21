@@ -13,7 +13,7 @@
 
 ### 3. Imputating zero intensities - LFQ
 #### Method_6 (imputing when all replicates in either case or control is zero):
-# Remove entries that all case and control replicates are zeros.
+* Remove entries that all case and control replicates are zeros.
 * For each replica mean and standard deviation of non-zero proteins intensities are counted. 
 * New intensity for each missing value in each replica is sampled from uniform distribution with parameters:
 *  start = mu - 3*sd, end = mu - 2*sd
