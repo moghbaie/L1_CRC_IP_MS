@@ -54,13 +54,29 @@ Project code and data is organized in following order:
 ### Venndiagram
 ![VennDiagram of significant proteins ](Image/Volcano_plot/Significant_VennDiagram.png)
 
-### Volcano plots
+### Volcano plots and mutations
+#### comparison between Colon Tumor tissue against ORF1 and IgG
 ![Volcano plot compare Colon Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_163T_IgG_7.png)
+<br>
+#### comparison between Colon Tumor tissue and normal tissue against ORF1 
 ![Volcano plot compare Colon Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_163N_ORF1_8.png)
+![Observed significant mutation colon tissue to normal ](Image/Phylogenetic_tree/Colon_Tumor_163N_ORF1_8.png)
+<br>
+#### comparison between Liver Tumor tissue against ORF1 and IgG 
 ![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159T_IgG_4.png)
+![Observed significant Liver colon tissue against ORF1 and IgG ](Image/Phylogenetic_tree/Liver_Tumor_159T_IgG_4.png)
+<br>
+#### comparison between Liver Tumor tissue and normal tissue against ORF1
 ![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159N_ORF1_5.png)
+![Observed significant Liver Tumor tissue and normal tissue against ORF1 ](Image/Phylogenetic_tree/Liver_Tumor_159N_ORF1_5.png)
+<br>
+#### comparison between Ovary Tumor tissue against ORF1 and IgG 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase1](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_2.png)
+![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase1](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_2.png)
+<br>
+#### comparison between Ovary Tumor tissue and normal tissue against ORF1 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase2](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_10.png)
+![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase2](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_10.png)
 
 ## Integrated plot:
 ### Venndiagram:
@@ -74,4 +90,4 @@ Project code and data is organized in following order:
 ![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)
 
 ### Heat map of all significant proteins across different tissues:
-![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all significant.png)
+![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all_significant.png)
