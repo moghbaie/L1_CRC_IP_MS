@@ -31,7 +31,10 @@ Template$set("public","drawMutation", function(){
   
   for(name in names(CRC$experimentImputateSignificant)){
     print(name)
-    significant_name <- CRC$experimentImputateSignificant[[name]][["uniprotID"]][CRC$experimentImputateSignificant[[name]][["Significant"]]=="Yes"]
+   
+    case1more <- CRC[["experimentPreImputateSignificant"]][[name]][["Case"]][match(CRC$experimentImputateSignificant[[name]][["uniprotID"]],CRC[["experimentPreImputateSignificant"]][[name]][,"uniprotID"])]
+    significant_name <- CRC$experimentImputateSignificant[[name]][["uniprotID"]][CRC$experimentImputateSignificant[[name]][["Significant"]]=="Yes"&case1more>1]
+
     significant_name_ORF <- significant_name[grepl("ORF1",significant_name)]
     myseq_Tumor_name <- myseq[names(myseq) %in% significant_name_ORF]
     if(length(myseq_Tumor_name)>1){
