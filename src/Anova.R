@@ -134,8 +134,9 @@ Template$set("public","drawVenDiagramSignificant", function(){
     Significant_proteins[[i]] <- ifelse(case1more>1, 
                                         self[["experimentImputateSignificant"]][[i]][,"Significant"][match(Significant_proteins$uniprotID,self[["experimentImputateSignificant"]][[i]][,"uniprotID"])],
                                         "No")
+    
     Significant_proteins[[i]][is.na(Significant_proteins[[i]])] <- "NO"
-    Significant_proteins[[i]] <- ifelse(Significant_proteins[[i]]=="Yes",1,0)
+    Significant_proteins[[i]] <- ifelse(Significant_proteins[[i]]=="Yes"&(self[["experimentPreImputateSignificant"]][[i]][,"Case"]>1),1,0)
   }
 self[["Significant_proteins"]] <- Significant_proteins
 

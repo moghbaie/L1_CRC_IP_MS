@@ -145,7 +145,7 @@ Template$set("public","drawHeatmap", function(){
   dev.off()
   
   ## heatmap with all significan
-  png(filename="../Image/Integrated_plot/heatmap_all significant.png",width = 600, height = 3700)
+  png(filename="../Image/Integrated_plot/heatmap_all_significant.png",width = 600, height = 3700)
   u <- ggplot(dl, aes(condition, geneName)) + 
     geom_tile(aes(fill = Expression, alpha=Significance),color="gray35")+
     scale_alpha(range = c(0.5, 1))+
@@ -251,7 +251,7 @@ Template$set("public","drawHeatmapUnnormalized", function(){
   
   
   ## heatmap with all significan
-  png(filename="../Image/Integrated_plot/heatmap_all significant_unnormalized.png",width = 600, height = 3700)
+  png(filename="../Image/Integrated_plot/heatmap_all_significant_unnormalized.png",width = 600, height = 3700)
   u <- ggplot(dl, aes(condition, geneName)) + 
     geom_tile(aes(fill = Expression, alpha=Significance),color="gray35")+
     scale_alpha(range = c(0.5, 1))+
