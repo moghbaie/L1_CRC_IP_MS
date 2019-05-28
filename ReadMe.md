@@ -1,4 +1,4 @@
-# Line1 CRC V2
+# Line 1 CRC IP MS
 ##### contact moghbaie@rockefeller.edu for any questions
 ##### 12/10/2018
 
@@ -19,10 +19,6 @@ We had 8 groups as follow:
 
 
 
-This project is done following previous project(Line1 CRC V1)
-Detail report exists in following link:
-https://docs.google.com/document/d/1Rdn2QTG43JNEqdcNk980U1I6ZvwONEP2scBosMZBJk0/edit
-
 Project code and data is organized in following order:
 
 * [src](https://github.com/moghbaie/L1_CRC_v2/tree/master/src)
@@ -31,7 +27,7 @@ Project code and data is organized in following order:
 
 
 ## Project Pipeline:
-<img src="https://github.com/moghbaie/L1_CRC_v2/blob/master/CRC_pipeline.png" alt="Pipeline" width="1000"></img>
+<img src="https://github.com/moghbaie/L1_CRC_IP_MS/blob/master/CRC_pipeline.png" alt="Pipeline" width="1000"></img>
 
 
 ## QC:
