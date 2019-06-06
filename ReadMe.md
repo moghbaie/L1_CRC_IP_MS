@@ -5,16 +5,16 @@
 
 We had 8 groups as follow:
 
-|	Site of Tumor	|	Condition	|	Collection #	| Age	|	Sex	|	Diagnosis	| Comment	|
-| ------------- | ------------- |------------- | ------------- |------------- | ------------- |------------- |
-| Ovary  | Igg  |	144	|	56	|	F 	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
-| Ovary  | Normal  |	144	|	56	|	F 	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
-|	Liver	|	Igg	|	159	|	35	|	M 	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Liver	|	Normal	|	159	|	35	|	M 	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Liver	|	Tumor	|	159	|	35	|	M 	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Colon	|	Igg	|	163	|	75	|	F 	|	Adenocarcinoma	|	2/3 expression	|
-|	Colon	|	Normal	|	163	|	75	|	F 	|	Adenocarcinoma	|	2/3 expression	|
-|	Colon	|	Tumor	|	163	|	75	|	F 	|	Adenocarcinoma	|	2/3 expression	|
+|	Site of Tumor	|	Condition	|	Tumor	| 	Diagnosis	| Comment	|
+| ------------- | ------------- |------------- | ------------- |------------- |
+| Ovary  | Igg  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
+| Ovary  | Normal  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
+|	Liver	|	Igg	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
+|	Liver	|	Normal	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
+|	Liver	|	Tumor	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
+|	Colon	|	Igg	|	C	|	Adenocarcinoma	|	2/3 expression	|
+|	Colon	|	Normal	|	C	|	Adenocarcinoma	|	2/3 expression	|
+|	Colon	|	Tumor	|	C	|	Adenocarcinoma	|	2/3 expression	|
 
 
 
