@@ -1,11 +1,12 @@
 # Line 1 CRC IP MS
+##### Data are available via ProteomeXchange with identifier PXD013743.
 ##### contact moghbaie@rockefeller.edu for any questions
 ##### 12/10/2018
 
 
 We had 8 groups as follow:
 
-|	Site of Tumor	|	Condition	|	Tumor	| 	Diagnosis	| Comment	|
+|	Site of Tumor	|	Condition	|	Tumor	| 	Diagnosis	| IHC staining source	|
 | ------------- | ------------- |------------- | ------------- |------------- |
 | Ovary  | Igg  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
 | Ovary  | Normal  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
