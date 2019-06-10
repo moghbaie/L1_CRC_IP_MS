@@ -33,6 +33,7 @@ Template$set("public","calculateAverageNormalized", function(run_order2){
       dt[["mean"]] <- apply(dy,1, function(x) mean(x[x!=0],na.rm=T))
       dt[["mean_unnormalized"]] <- apply(dw,1,function(x) mean(x[x!=0],na.rm=T))
       
+      
       average_list[[paste0("Average.",j)]]<- dt$mean
       average_unnormalized_list[[paste0("Average.unnormalized.",j)]]<- dt$mean_unnormalized
     }
@@ -43,6 +44,13 @@ Template$set("public","calculateAverageNormalized", function(run_order2){
   average_unnormalized_list[is.na(average_unnormalized_list)] <- 0
   average_unnormalized_list <- average_unnormalized_list[self$input_merged$Potential.contaminant!="+",]
   
+  
+  names <- names(average_list)[c(-1,-2)]
+  names <- gsub("144T","Tumor-A",names)
+  names <- gsub("159T","Tumor-B",names)
+  names <- gsub("163T","Tumor-C",names)
+  names(average_list)[c(-1,-2)] <- names
+  names(average_unnormalized_list)[c(-1,-2)] <- gsub("Average","Average.unnormalized",names)
   self[["experimentAveragedNormalized"]]<- average_list
   self[["experimentAveraged"]] <-  average_unnormalized_list
 }
@@ -84,12 +92,21 @@ Template$set("public","drawHeatmap", function(){
   heatmap_average[["Average.144T_ORF1_9"]] <- heatmap_average[["Average.Ovary_Tumor_144T_IgG_10"]]
   heatmap_average[["Average.163T_ORF1_6"]] <- ifelse(heatmap_average$Average.Colon_Tumor_163T_IgG_7+heatmap_average$Average.Colon_Tumor_163N_ORF1_8 >0, 1, 0)
   
-  heatmap_average <- heatmap_average[,grepl(paste0(colnames(self[["experimentAveragedNormalized"]]),collapse="|"),colnames(heatmap_average))]
+  sel_cols <- c("id", "uniprotID",colnames(heatmap_average)[grepl("T_ORF1_",colnames(heatmap_average))])
+  
+  heatmap_average <- heatmap_average[,grepl(paste0(sel_cols,collapse="|"),colnames(heatmap_average))]
   uniprotID_selected <- heatmap_average[apply(heatmap_average[,(3:6)],1, max)>0,"uniprotID"]
   
-   
+  uniprotID_sel2 <- heatmap_average[apply(heatmap_average[,(3:6)],1, sum)>1,"uniprotID"]
+  uniprotID_sel2 <- unique(c(uniprotID_sel2 , eLife_list$uniprotID))
+  
+  
   significants <- unlist(lapply(self[["Significant_list"]]$uniprotID, function(x) strsplit(x, ";")[[1]][1]))
   significants <- unlist(lapply(significants, function(x) strsplit(x, "-")[[1]][1]))
+  
+  colnames(heatmap_average) <- gsub("144T","Tumor-A",colnames(heatmap_average))
+  colnames(heatmap_average) <- gsub("159T","Tumor-B",colnames(heatmap_average))
+  colnames(heatmap_average) <- gsub("163T","Tumor-C",colnames(heatmap_average))
   
   dl <- cbind(melt(heatmap_average[,-1]%>%dplyr::filter(uniprotID%in% significants)), 
               melt(self[["experimentAveragedNormalized"]][,-1]%>%dplyr::filter(uniprotID%in% significants))[-(1:2)]%>%dplyr::rename("value.2"=value))
@@ -108,7 +125,7 @@ Template$set("public","drawHeatmap", function(){
   #                      values = dl[["uniprotID"]], 
   #                      mart = ensembl)
   geneName_list <- gene_protein$Gene.names[match(dl$uniprotID, gene_protein$Entry)]
- 
+  
   dl[["geneName"]] <- ifelse(is.na(geneName_list),dl$uniprotID, geneName_list)
   dl$geneName[dl$geneName=="Q9UN81"] <- "L1RE1"
   
@@ -117,8 +134,8 @@ Template$set("public","drawHeatmap", function(){
   colon_significant <- unlist(lapply(colon_significant, function(x) strsplit(x, ";")[[1]][1]))
   colon_significant <- unlist(lapply(colon_significant, function(x) strsplit(x, "-")[[1]][1]))
   
-  dl2 <- dl %>% filter(uniprotID %in% colon_significant)
-  
+  dl2 <- dl %>% filter(uniprotID %in% uniprotID_sel2)
+  a <-ifelse(unique(dl2[["geneName"]])[order(unique(dl2[["geneName"]]))] %in% unique(eLife_list$geneName),"red","black")
   sequence_length = length(unique(dl2$uniprotID))
   first_sequence = c(1:(sequence_length%/%2)) 
   second_sequence = c((sequence_length%/%2+1):sequence_length) 
@@ -127,7 +144,7 @@ Template$set("public","drawHeatmap", function(){
   
   
   ## polar plot with only colon significant
-  png(filename="../Image/Integrated_plot/heatmap_colon_significant.png",width = 1200, height = 1200)
+  png(filename="../Image/Integrated_plot/heatmap_significant_eLife.png",width = 1200, height = 1200)
   q <- ggplot(dl2, aes(condition, geneName)) + 
     geom_tile(aes(fill = Expression, alpha=Significance),color="gray35")+
     scale_alpha(range = c(0.5, 1))+
@@ -137,7 +154,7 @@ Template$set("public","drawHeatmap", function(){
     scale_y_discrete(position = "right")+
     coord_polar(theta = "y")+
     theme_bw()+
-    theme(axis.text.x = element_text(angle= c(first_angles,second_angles),size=10),
+    theme(axis.text.x = element_text(angle= c(first_angles,second_angles),size=10, colour = a),
           axis.text.y = element_text(size=14),
           axis.title=element_text(size=14,face="bold"))
   
@@ -185,12 +202,16 @@ Template$set("public","drawHeatmapUnnormalized", function(){
   heatmap_average[["Average.unnormalized.163T_ORF1_6"]] <- ifelse(heatmap_average$Average.Colon_Tumor_163T_IgG_7 + heatmap_average$Average.Colon_Tumor_163N_ORF1_8>0,1,0)
   
   
-  heatmap_average <- heatmap_average[,colnames(self[["experimentAveraged"]])]
+  sel_cols <- c("id", "uniprotID",colnames(heatmap_average)[grepl("T_ORF1_",colnames(heatmap_average))])
+  heatmap_average <- heatmap_average[,grepl(paste0(sel_cols,collapse="|"),colnames(heatmap_average))]
   uniprotID_selected <- heatmap_average[apply(heatmap_average[,(3:6)],1, max)>0,"uniprotID"]
   
   significants <- unlist(lapply(self[["Significant_list"]]$uniprotID, function(x) strsplit(x, ";")[[1]][1]))
   significants <- unlist(lapply(significants, function(x) strsplit(x, "-")[[1]][1]))
   
+  colnames(heatmap_average) <- gsub("144T","Tumor-A",colnames(heatmap_average))
+  colnames(heatmap_average) <- gsub("159T","Tumor-B",colnames(heatmap_average))
+  colnames(heatmap_average) <- gsub("163T","Tumor-C",colnames(heatmap_average)) 
   
   dl <- cbind(melt(heatmap_average[,-1]%>%dplyr::filter(uniprotID%in% significants)), 
               melt(self[["experimentAveraged"]][,-1]%>%dplyr::filter(uniprotID%in% significants))[-(1:2)]%>%dplyr::rename("value.2"=value))
@@ -222,9 +243,12 @@ Template$set("public","drawHeatmapUnnormalized", function(){
   colon_significant <- unlist(lapply(colon_significant, function(x) strsplit(x, ";")[[1]][1]))
   colon_significant <- unlist(lapply(colon_significant, function(x) strsplit(x, "-")[[1]][1]))
   
+  uniprotID_sel2 <- heatmap_average[apply(heatmap_average[,(3:6)],1, sum)>1,"uniprotID"]
+  uniprotID_sel2 <- unique(c(uniprotID_sel2 , eLife_list$uniprotID))
+  
   dl2 <- dl %>% filter(uniprotID %in%
                          unlist(lapply(colon_significant,function(x) strsplit(x, "-")[[1]][1])))
-  
+  a <-ifelse(unique(dl2[["geneName"]])[order(unique(dl2[["geneName"]]))] %in% unique(eLife_list$geneName),"red","black")
   sequence_length = length(unique(dl2$uniprotID))
   first_sequence = c(1:(sequence_length%/%2)) 
   second_sequence = c((sequence_length%/%2+1):sequence_length) 
@@ -232,7 +256,7 @@ Template$set("public","drawHeatmapUnnormalized", function(){
   second_angles = c(-90 - 180/length(second_sequence) * second_sequence)
   
   ## polar plot with only colon significant
-  png(filename="../Image/Integrated_plot/heatmap_colon_significant_unnormalized.png",width = 1200, height = 1200)
+  png(filename="../Image/Integrated_plot/heatmap_significant_eLife_unnormalized.png",width = 1200, height = 1200)
   q <- ggplot(dl2, aes(condition, geneName)) + 
     geom_tile(aes(fill = Expression, alpha=Significance),color="gray35")+
     scale_alpha(range = c(0.5, 1))+
@@ -242,7 +266,7 @@ Template$set("public","drawHeatmapUnnormalized", function(){
     scale_y_discrete(position = "right")+
     coord_polar(theta = "y")+
     theme_bw()+
-    theme(axis.text.x = element_text(angle= c(first_angles,second_angles),size=10),
+    theme(axis.text.x = element_text(angle= c(first_angles,second_angles),size=10, colour = a),
           axis.text.y = element_text(size=14),
           axis.title=element_text(size=14,face="bold"))
   
@@ -271,8 +295,8 @@ Template$set("public","drawHeatmapUnnormalized", function(){
 ###################################################################################################################
 ### MDS plot
 Template$set("public","drawMDSplot", function(){
-  average_list <- CRC$experimentAveragedNormalized
-  dz <- average_list%>%filter(uniprotID%in% CRC$Significant_list$uniprotID)
+  average_list <- self$experimentAveragedNormalized
+  dz <- average_list%>%filter(uniprotID%in% self$Significant_list$uniprotID)
   rownames(dz) <- dz$id
   d4 = dist(dz[-(1:2)])
   
@@ -303,7 +327,7 @@ Template$set("public","drawMDSplot", function(){
   ### You need to have Imagemagick installed and give the path to convert.exe to it
   imconvertstring<-"\"c:\\Program Files\\ImageMagick-7.0.8-Q16\\convert.exe\" -delay 1x%d %s*.png %s.%s"
   movie3d(s, duration=33, dir="../Image/Integrated_plot/", clean=T, convert = imconvertstring, type = "gif")
-
+  
 })
 #######################################################################
 

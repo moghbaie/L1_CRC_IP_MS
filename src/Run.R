@@ -10,7 +10,7 @@ setwd(
 
 CRAN.packages <- c("readr","readxl","data.table","reshape2","dplyr","magrittr",
                    "igraph","sqldf","stringr","corrplot","ggplot2","R6","ggridges",
-                   "gridExtra","ggrepel","rgl","venn")
+                   "gridExtra","ggrepel","rgl","venn", 'writexl')
 bioconductor.packages <- c("biomaRt","limma","qvalue","msa","ape","seqinr","ggseqlogo")
 
 

@@ -287,48 +287,32 @@ draw_volcanoplot <- function(data, condition, eLife_list){
   
   cols <- c("Strong significant ORF1s"="red3",  "Significant"="black",  "Not significant"="grey")
   
-  pdf(paste0("../Image/Volcano_plot/Volcano_plot_",condition,".pdf"),width = 12, height = 18)
+  #pdf(paste0("../Image/Volcano_plot/Volcano_plot_",condition,".pdf"),width = 12, height = 18)
+  png(paste0("../Image/Volcano_plot/Volcano_plot_",condition,".png"),width = 1000, height = 700)
+  
   p <- ggplot(ds,aes(logfold, -log10(p.adj),label=ID)) +
     geom_point(col= "orange",size=size)+
     geom_point(aes(colour=group),fill = col, size=2) +
     geom_vline(xintercept = fold_cutoff, col = "blue")+
     geom_hline(yintercept = -log10(pvalue_cutoff), col = "green")+
-    geom_text_repel(data  = subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))), 
-                    colour = ifelse(grepl("L1RE1|ORF1P",subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID)))$ID),"red","black"), segment.size  = 0.2, 
+    #geom_text_repel(data  = subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))), 
+    #                colour = ifelse(grepl("L1RE1|ORF1P",subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID)))$ID),"red","black"), segment.size  = 0.2, 
+    #                segment.alpha =0.35,
+    #                #nudge_y =0.15,
+    #                box.padding = unit(0.4, "lines"), 
+    #                point.padding = unit(0.4, "lines"),
+    #                size=4.5
+    #                )+
+    geom_text_repel(data  = subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")), 
+                    colour = ifelse(grepl("L1RE1|ORF1P",subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1"))$ID),"red","black"), segment.size  = 0.2, 
                     segment.alpha =0.35,
                     #nudge_y =0.15,
-                    box.padding = unit(0.55, "lines"), 
-                    point.padding = unit(0.55, "lines"),
-                    size=6
-                    )+
-    #geom_text_repel(data  = subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold<4.2)), 
-    #                colour = ifelse(grepl("L1RE1|ORF1P",subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold<4.2))$ID),"red","black"), segment.size  = 0.2, 
-    #                segment.alpha =0.3,
-    #                nudge_x =  0.04 -subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold<4.2))$logfold, 
-    #                box.padding = unit(0.55, "lines"), 
-    #                point.padding = unit(0.55, "lines"),
-    #                size=6
-    #)+
-    #geom_text_repel(data  = subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold>=1)), 
-                    #colour = ifelse(grepl("L1RE1|ORF1P",subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold>=1))$ID),"red","black"), segment.size  = 0.2, 
-                    #segment.alpha =0.3,
-                    #nudge_x = 12- subset(ds, ((Significant=="Yes"& outliers)|ID=="L1RE1")&(!grepl("ORF1P",ID))&(logfold>=1))$logfold, 
-                    #box.padding = unit(1, "lines"), 
-                    #point.padding = unit(1, "lines"),
-                    #segment.size = 0.2,
-                   # segment.color = "grey50",
-                    #size=6, 
-                    #direction="x"
-    #)+
+                    box.padding = unit(0.45, "lines"), 
+                    point.padding = unit(0.45, "lines"),
+                    size=3
+    )+
     ggtitle(condition)+ scale_colour_manual(values=cols, aesthetics = c("fill","colour"))+
     theme_minimal()+ 
-   
-    #scale_x_continuous(limits = c(-3, 12))+ #144
-    #scale_y_continuous(limits = c(0, 3.8))
-    #scale_x_continuous(limits = c(-5, 11))+ #159
-    #scale_y_continuous(limits = c(0, 4.5))
-    #scale_x_continuous(limits = c(-7, 9.5))+ #163
-    #scale_y_continuous(limits = c(0, 3.8))
     scale_x_continuous(limits = c(-7, 12))+
     scale_y_continuous(limits = c(0, 4.5))
   

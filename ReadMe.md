@@ -1,21 +1,23 @@
 # Line 1 CRC IP MS
 ##### Data are available via ProteomeXchange with identifier PXD013743.
 ##### contact moghbaie@rockefeller.edu for any questions
-##### 12/10/2018
+##### 06/06/2019
 
 
-We had 8 groups as follow:
+We had 10 groups as follow:
 
-|	Site of Tumor	|	Condition	|	Tumor	| 	Diagnosis	| IHC staining source	|
-| ------------- | ------------- |------------- | ------------- |------------- |
-| Ovary  | Igg  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
-| Ovary  | Normal  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	|
-|	Liver	|	Igg	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Liver	|	Normal	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Liver	|	Tumor	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	|
-|	Colon	|	Igg	|	C	|	Adenocarcinoma	|	2/3 expression	|
-|	Colon	|	Normal	|	C	|	Adenocarcinoma	|	2/3 expression	|
-|	Colon	|	Tumor	|	C	|	Adenocarcinoma	|	2/3 expression	|
+|	Site of Tumor	|	Condition	|	Tumor	| 	Diagnosis	| IHC staining source	| Version |
+| ------------- | ------------- |------------- | ------------- |------------- |------------- |
+| Ovary  | Igg  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	| 1 |
+| Ovary  | Normal  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	| 1 |
+| Ovary  | Igg  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	| 2 |
+| Ovary  | Normal  |	A	|	Krukenberg Carcinoma	|	Very very strong L1 expresse	| 2 |
+|	Liver	|	Igg	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	| 1 |
+|	Liver	|	Normal	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	| 1 |
+|	Liver	|	Tumor	|	B	|	Metastatic Rectal Adenocarcinoma	|	Strong 3/3 in liver and node	| 1 |
+|	Colon	|	Igg	|	C	|	Adenocarcinoma	|	2/3 expression	| 1 |
+|	Colon	|	Normal	|	C	|	Adenocarcinoma	|	2/3 expression	| 1 |
+|	Colon	|	Tumor	|	C	|	Adenocarcinoma	|	2/3 expression	| 1 |
 
 
 
@@ -51,28 +53,32 @@ Project code and data is organized in following order:
 ![VennDiagram of significant proteins ](Image/Volcano_plot/Significant_VennDiagram.png)
 
 ### Volcano plots and mutations
-#### comparison between Colon Tumor tissue against ORF1 and IgG
+#### comparison between Tumor C (colon) against ORF1 and IgG
 ![Volcano plot compare Colon Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_163T_IgG_7.png)
 <br>
-#### comparison between Colon Tumor tissue and normal tissue against ORF1 
+#### comparison between Tumor C (colon) and normal tissue against ORF1 
 ![Volcano plot compare Colon Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Colon_Tumor_163N_ORF1_8.png)
-![Observed significant mutation colon tissue to normal ](Image/Phylogenetic_tree/Colon_Tumor_163N_ORF1_8.png)
+
 <br>
-#### comparison between Liver Tumor tissue against ORF1 and IgG 
+#### comparison between Tumor B (liver) against ORF1 and IgG 
 ![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159T_IgG_4.png)
 ![Observed significant Liver colon tissue against ORF1 and IgG ](Image/Phylogenetic_tree/Liver_Tumor_159T_IgG_4.png)
+![Mutation frequency in liver tumor  against ORF1 and IgG ](Image/Phylogenetic_tree/mutation_fre_Liver_Tumor_159T_IgG_4.png)
 <br>
-#### comparison between Liver Tumor tissue and normal tissue against ORF1
+#### comparison between Tumor B (liver) and normal tissue against ORF1
 ![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159N_ORF1_5.png)
 ![Observed significant Liver Tumor tissue and normal tissue against ORF1 ](Image/Phylogenetic_tree/Liver_Tumor_159N_ORF1_5.png)
+![Mutation frequency in liver tumor and normal tissue against ORF1 ](Image/Phylogenetic_tree/mutation_fre_Liver_Tumor_159N_ORF1_5.png)
 <br>
-#### comparison between Ovary Tumor tissue against ORF1 and IgG 
+#### comparison between Tumor A (ovary) against ORF1 and IgG 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase1](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_2.png)
 ![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase1](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_2.png)
+![Mutation frequency in Ovary tumor   against ORF1 and IgG ](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_2.png)
 <br>
-#### comparison between Ovary Tumor tissue and normal tissue against ORF1 
+#### comparison between Tumor A (ovary) and normal tissue against ORF1 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase2](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_10.png)
 ![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase2](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_10.png)
+![Mutation frequency in Ovary tumor  and normal tissue against ORF1  ](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_10.png)
 
 ## Integrated plot:
 ### Venndiagram:
@@ -82,8 +88,8 @@ Project code and data is organized in following order:
 ![MDS plot ](Image/Integrated_plot/movie.gif)
 <br>
 <br>
-### Polar map of significant proteins in Colon cancer in different tissue:
-![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_colon_significant.png)
+### Polar map of proteins that were significant in two conditions or were observed in previous researches and were significant in at least one condition:
+![Polar map - comparison of Colon significant proteins in different tissue](Image/Integrated_plot/heatmap_significant_eLife.png)
 
 ### Heat map of all significant proteins across different tissues:
 ![Heatmap - all significant proteins](Image/Integrated_plot/heatmap_all_significant.png)
