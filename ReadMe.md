@@ -68,17 +68,23 @@ Project code and data is organized in following order:
 <br>
 #### comparison between Tumor B (liver) and normal tissue against ORF1
 ![Volcano plot compare Liver Tumor tissue to Normal ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159N_ORF1_5.png)
+##### Observed significant Liver Tumor tissue and normal tissue against ORF1
 ![Observed significant Liver Tumor tissue and normal tissue against ORF1 ](Image/Phylogenetic_tree/Liver_Tumor_159N_ORF1_5.png)
+##### Mutation frequency in liver tumor and normal tissue against ORF1
 ![Mutation frequency in liver tumor and normal tissue against ORF1 ](Image/Phylogenetic_tree/mutation_fre_Liver_Tumor_159N_ORF1_5.png)
 <br>
 #### comparison between Tumor A (ovary) against ORF1 and IgG 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase1](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_2.png)
+##### Observed significant Ovary Tumor tissue against ORF1 and IgG - phase1
 ![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase1](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_2.png)
+##### Mutation frequency in Ovary tumor  against ORF1 and IgG
 ![Mutation frequency in Ovary tumor  against ORF1 and IgG ](Image/Phylogenetic_tree/mutation_fre_Ovary_Tumor_144T_IgG_2.png)
 <br>
 #### comparison between Tumor A (ovary) and normal tissue against ORF1 
 ![Volcano plot compare Ovary Tumor tissue to Igg - phase2](Image/Volcano_plot/Volcano_plot_Ovary_Tumor_144T_IgG_10.png)
+##### Observed significant Ovary Tumor tissue against ORF1 and IgG - phase2
 ![Observed significant Ovary Tumor tissue against ORF1 and IgG - phase2](Image/Phylogenetic_tree/Ovary_Tumor_144T_IgG_10.png)
+##### Mutation frequency in Ovary tumor  and normal tissue against ORF1
 ![Mutation frequency in Ovary tumor  and normal tissue against ORF1  ](Image/Phylogenetic_tree/mutation_fre_Ovary_Tumor_144T_IgG_10.png)
 
 ## Integrated plot:
