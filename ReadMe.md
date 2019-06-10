@@ -62,7 +62,9 @@ Project code and data is organized in following order:
 <br>
 #### comparison between Tumor B (liver) against ORF1 and IgG 
 ![Volcano plot compare Liver Tumor tissue to Igg ](Image/Volcano_plot/Volcano_plot_Liver_Tumor_159T_IgG_4.png)
+##### Observed significant Liver colon tissue against ORF1 and IgG 
 ![Observed significant Liver colon tissue against ORF1 and IgG ](Image/Phylogenetic_tree/Liver_Tumor_159T_IgG_4.png)
+##### Mutation frequency in liver tumor  against ORF1 and IgG
 ![Mutation frequency in liver tumor  against ORF1 and IgG ](Image/Phylogenetic_tree/mutation_fre_Liver_Tumor_159T_IgG_4.png)
 <br>
 #### comparison between Tumor B (liver) and normal tissue against ORF1
